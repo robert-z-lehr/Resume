@@ -3,75 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robert Lehr | Resume</title>
-  <meta name="description" content="Public-facing resume page for Robert Lehr with direct view, download, and email actions." />
+  <title>Robert Lehr Resume</title>
+  <meta name="description" content="Robert Lehr resume with direct PDF viewing and download." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="shell">
-    <header class="hero">
-      <p class="eyebrow">Professional Materials</p>
-      <h1>Robert Lehr</h1>
-      <p class="subtitle">
-        Resume hub with direct access to view, download, or email.
-        Future sections can extend this interface to references, portfolio one-pagers, and cover letters.
-      </p>
+  <main class="page">
+    <div class="topbar">
+      <h1>Robert Lehr — Resume</h1>
+      <a class="button" href="assets/Robert_Lehr_Resume.pdf" download="Robert_Lehr_Resume.pdf">Download PDF</a>
+    </div>
 
-      <div class="actions">
-        <a class="button primary" href="assets/Robert_Lehr_Resume.pdf" target="_blank" rel="noopener">Open Resume</a>
-        <a class="button secondary" href="assets/Robert_Lehr_Resume.pdf" download="Robert_Lehr_Resume.pdf">Download PDF</a>
-        <a class="button ghost" href="mailto:robert.z.lehr@gmail.com?subject=Resume%20Inquiry%20for%20Robert%20Lehr">Email Robert</a>
-      </div>
+    <p class="note">If the PDF does not display in your browser, use the download button.</p>
 
-      <div class="contact-strip">
-        <span>Austin, Texas</span>
-        <span>robert.z.lehr@gmail.com</span>
-        <span>github.com/robert-z-lehr</span>
-      </div>
-    </header>
-
-    <main class="content">
-      <section class="card preview-card">
-        <div class="card-header">
-          <div>
-            <p class="card-label">Current document</p>
-            <h2>Latest Resume</h2>
-          </div>
-          <div class="card-actions">
-            <a href="assets/Robert_Lehr_Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
-          </div>
-        </div>
-
-        <div class="pdf-frame">
-          <object data="assets/Robert_Lehr_Resume.pdf" type="application/pdf">
-            <div class="fallback">
-              <p>Your browser did not load the embedded PDF.</p>
-              <a class="button primary" href="assets/Robert_Lehr_Resume.pdf" target="_blank" rel="noopener">Open Resume</a>
-            </div>
-          </object>
-        </div>
-      </section>
-
-      <section class="grid">
-        <article class="card mini-card">
-          <p class="card-label">Now live</p>
-          <h3>Resume access</h3>
-          <p>Single-page entry point with direct resume viewing, download, and email actions.</p>
-        </article>
-
-        <article class="card mini-card">
-          <p class="card-label">Planned expansion</p>
-          <h3>Rotating content rail</h3>
-          <p>Ready to evolve into a horizontally rotating or endless-loop interface for additional professional materials.</p>
-        </article>
-
-        <article class="card mini-card">
-          <p class="card-label">Next modules</p>
-          <h3>References, portfolio, cover letters</h3>
-          <p>The front end can later promote each content type as a smooth slide, panel, or carousel stop.</p>
-        </article>
-      </section>
-    </main>
-  </div>
+    <section class="viewer" aria-label="Resume PDF viewer">
+      <iframe
+        src="assets/Robert_Lehr_Resume.pdf#view=FitH"
+        title="Robert Lehr Resume"
+      ></iframe>
+    </section>
+  </main>
 </body>
 </html>
