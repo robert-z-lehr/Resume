@@ -3,21 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robert Lehr Resume</title>
-  <meta name="description" content="Robert Lehr resume with direct PDF viewing and download." />
+  <title>Robert Lehr | Resume</title>
+  <meta name="description" content="Robert Lehr one-page and two-page engineering resumes." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="page">
-    <div class="topbar">
-      <h1>Robert Lehr — Resume</h1>
-      <a class="button" href="/Resume/assets/Robert_Lehr_Resume.pdf" download="Robert_Lehr_Resume.pdf">Download PDF</a>
-    </div>
+    <header class="topbar">
+      <div>
+        <h1>Robert Lehr — Resume</h1>
+        <p class="subtitle">Engineering, systems, data, and AI-enabled technical tool development</p>
+      </div>
 
-    <section class="viewer-images" aria-label="Resume preview">
-      <img class="resume-page" src="assets/page_1.png" alt="Resume page 1" />
-      <img class="resume-page" src="assets/page_2.png" alt="Resume page 2" />
+      <div class="tabs" role="tablist" aria-label="Resume versions">
+        <button class="tab active" type="button" data-target="one-page" role="tab" aria-selected="true">
+          1-page resume
+        </button>
+        <button class="tab" type="button" data-target="two-page" role="tab" aria-selected="false">
+          2-page resume
+        </button>
+      </div>
+    </header>
+
+    <section id="one-page" class="panel active" role="tabpanel">
+      <div class="panel-toolbar">
+        <span class="panel-label">Concise career-fair version</span>
+        <a class="button" href="assets/Robert_Lehr_Resume_1page.pdf" download="Robert_Lehr_Resume_1page.pdf">Download 1-page PDF</a>
+      </div>
+      <iframe
+        class="pdf-viewer"
+        src="assets/Robert_Lehr_Resume_1page.pdf#view=FitH"
+        title="Robert Lehr one-page resume">
+      </iframe>
+    </section>
+
+    <section id="two-page" class="panel" role="tabpanel">
+      <div class="panel-toolbar">
+        <span class="panel-label">Expanded experience and project version</span>
+        <a class="button" href="assets/Robert_Lehr_Resume_2page.pdf" download="Robert_Lehr_Resume_2page.pdf">Download 2-page PDF</a>
+      </div>
+      <iframe
+        class="pdf-viewer"
+        src="assets/Robert_Lehr_Resume_2page.pdf#view=FitH"
+        title="Robert Lehr two-page resume">
+      </iframe>
     </section>
   </main>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.panel');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((item) => {
+          item.classList.remove('active');
+          item.setAttribute('aria-selected', 'false');
+        });
+
+        panels.forEach((panel) => panel.classList.remove('active'));
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
